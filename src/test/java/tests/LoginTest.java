@@ -8,11 +8,12 @@ import util.BaseClass;
 
 public class LoginTest extends BaseClass {
 	
-	
+	 
 
 	@Before
 	public void pageOpen(){
 		commonUtil.getUrl("https://www.srilankan.com/");
+		
 	}
 	@Test
 	public void verfyTab(){
