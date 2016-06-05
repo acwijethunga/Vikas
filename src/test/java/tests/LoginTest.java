@@ -8,7 +8,6 @@ import util.BaseClass;
 
 public class LoginTest extends BaseClass {
 	
-	 
 
 	@Before
 	public void pageOpen(){
