@@ -1,10 +1,16 @@
 package tests;
 
-public class Welcome {
+import org.junit.Test;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+import util.BaseClass;
+import util.CommanUtil;
 
+public class Welcome extends BaseClass {
+
+	@Test
+	public void welcomeTest(){
+		commonUtil.pageVrify("");
+		
 	}
 
 }
