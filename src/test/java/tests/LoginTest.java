@@ -2,21 +2,23 @@ package tests;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import util.BaseClass;
 
 public class LoginTest extends BaseClass {
 	
 
-	@Before
-	public void pageOpen(){
-		commonUtil.getUrl("https://www.srilankan.com/");
-		
-	}
+
 	@Test
-	public void verfyTab(){
+	public void verfyTab() throws InterruptedException{
 		commonUtil.pageVrify("Select Your Country");
+		commonUtil.click(loginPgObj.cuntryDrpDwn);
+		Thread.sleep(1000);
+		commonUtil.select("Singapore", loginPgObj.cuntryDrpDwn);
+		
 	}
 	
 	
