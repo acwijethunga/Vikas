@@ -29,34 +29,9 @@ public class BaseClass {
 		loginPgObj =new LoginPgObj(driver);
 		log.info("this is baseclass");
 		
-		String url=null;
-		
-			BufferedReader br = null;
+				
 
-			try {
-
-				String sCurrentLine;
-
-				br = new BufferedReader(new FileReader(".//TestData//url.txt"));
-
-				while ((sCurrentLine = br.readLine()) != null) {
-					String[] urls =  sCurrentLine.split("=");
-					if(urls[0].equals("url"));
-						url=urls[1];
-				}
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (br != null)br.close();
-				} catch (IOException ex) {
-					ex.printStackTrace();
-				}
-			}
-		
-
-		commonUtil.getUrl(url);
+		commonUtil.getUrl(commonUtil.setUrl("url"));
 
 	}
 	

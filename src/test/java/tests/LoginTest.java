@@ -26,10 +26,7 @@ public class LoginTest extends BaseClass {
 		commonUtil.click(loginPgObj.explorebtn);
 		
 	}
-	@After
-	public void quiteDriver(){
-		driver.quit();
-	}
+	
 	
 }
 

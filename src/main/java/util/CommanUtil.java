@@ -35,6 +35,33 @@ private WebElement webelement;
 		webelement = driver.findElement(element);
 		webelement.click();
 	}
-	
+	public String setUrl(String Name){
+		String url=null;
+		
+		BufferedReader br = null;
+
+		try {
+
+			String sCurrentLine;
+
+			br = new BufferedReader(new FileReader(".//TestData//url.txt"));
+
+			while ((sCurrentLine = br.readLine()) != null) {
+				String[] urls =  sCurrentLine.split("=");
+				if(urls[0].equals(Name));
+					url=urls[1];
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (br != null)br.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+		}
+		return url;
+	}
 
 }
