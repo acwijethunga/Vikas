@@ -1,5 +1,8 @@
 package util;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.junit.BeforeClass;
@@ -15,7 +18,7 @@ public class BaseClass {
 	public static CommanUtil commonUtil;
 	public static LoginTest login;
 	public static LoginPgObj loginPgObj;
-	
+	public static String url=null;
 	private static Logger log  = Logger.getLogger(BaseClass.class.getSimpleName());
 	
 	@BeforeClass
@@ -26,7 +29,34 @@ public class BaseClass {
 		loginPgObj =new LoginPgObj(driver);
 		log.info("this is baseclass");
 		
-		commonUtil.getUrl("https://www.srilankan.com/");
+		String url=null;
+		
+			BufferedReader br = null;
+
+			try {
+
+				String sCurrentLine;
+
+				br = new BufferedReader(new FileReader(".//TestData//url.txt"));
+
+				while ((sCurrentLine = br.readLine()) != null) {
+					String[] urls =  sCurrentLine.split("=");
+					if(urls[0].equals("url"));
+						url=urls[1];
+				}
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (br != null)br.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
+		
+
+		commonUtil.getUrl(url);
 
 	}
 	

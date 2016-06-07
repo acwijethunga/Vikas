@@ -1,5 +1,9 @@
 package util;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +18,7 @@ private WebElement webelement;
 		this.driver = driver;
 	}
 	public void getUrl(String url){
+		
 		driver.get(url);
 	}
 
@@ -30,5 +35,6 @@ private WebElement webelement;
 		webelement = driver.findElement(element);
 		webelement.click();
 	}
+	
 
 }

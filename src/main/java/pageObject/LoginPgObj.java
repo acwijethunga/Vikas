@@ -11,7 +11,9 @@ public class LoginPgObj {
 		this.driver = driver;
 	}
 	
-	public By cuntryDrpDwn = By.id("countryDropDown_title");
+	public By cuntryDrpDwn = By.xpath(".//*[@id='countryDropDown_msdd']/div[1]/span[2]");
+	public By explorebtn = By.id("btnExplore");
+	public By cuntry = By.xpath(".//*[@id='countryDropDown_child']/ul/li[18]/span");
 	
 	
 

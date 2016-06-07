@@ -9,6 +9,7 @@ import tests.Welcome;
 
 
 
+
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	LoginTest.class,Welcome.class
